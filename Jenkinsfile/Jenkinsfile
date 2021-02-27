@@ -35,5 +35,13 @@ sh 'mvn -Dsonar.test.exclusions=**/test/java/servlet/createpage_junit.java -Dson
         sh 'mvn -B clean package'
       }
     }
+stage('UI Test') { // Compile and do unit testing
+
+      steps {
+        // run Gradle to execute compile and unit testing
+        sh 'mvn -B Test'
+      }
+    }
+
   }
 }
