@@ -39,7 +39,7 @@ sh 'mvn -Dsonar.test.exclusions=**/test/java/servlet/createpage_junit.java -Dson
       }
           post {
                  always {
-                     jiraSendDeploymentInfo site: 'saurabh12j.atlassian.net',environmentName: 'Test' 
+                     jiraSendDeploymentInfo environmentId: '1', environmentName: 'Test', environmentType: 'testing', issueKeys: ['SQ-1'], serviceIds: [''], site: 'saurabh12j.atlassian.net', state: 'successful' 
                  }}}
 stage('UI Test') { // Compile and do unit testing
 
