@@ -39,7 +39,7 @@ stage('UI Test') { // Compile and do unit testing
 
       steps {
         // run Gradle to execute compile and unit testing
-        sh 'mvn -B Test'
+        sh 'mvn -B test'
       }
     }
 
