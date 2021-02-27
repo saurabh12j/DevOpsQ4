@@ -30,7 +30,7 @@ sh 'mvn -Dsonar.test.exclusions=**/test/java/servlet/createpage_junit.java -Dson
         post {
                  always {
                      jiraSendBuildInfo site: 'saurabh12j.atlassian.net'
-                 }}
+                 }}}
       stage('Deploy - Test') { // Compile and do unit testing
 
       steps {
@@ -40,7 +40,7 @@ sh 'mvn -Dsonar.test.exclusions=**/test/java/servlet/createpage_junit.java -Dson
           post {
                  always {
                      jiraSendDeploymentInfo site: 'saurabh12j.atlassian.net',environmentName: 'Test' 
-                 }}
+                 }}}
 stage('UI Test') { // Compile and do unit testing
 
       steps {
