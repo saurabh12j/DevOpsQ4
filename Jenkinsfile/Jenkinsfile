@@ -8,7 +8,7 @@ agent any
     stage('Source') { // Get code
       steps {
         // get code from our Git repository
-        git 'https://github.com/saurabh12j/DevOps-Demo-WebApp.git'
+        git 'https://github.com/Jenkinsaks/DevOps-Demo-WebApp.git'
       }
     }
       
@@ -28,8 +28,9 @@ sh 'mvn -Dsonar.test.exclusions=**/test/java/servlet/createpage_junit.java -Dson
         sh 'mvn -B -DskipTests clean compile'
       }
         post {
-                 always {
-                     jiraSendBuildInfo site: 'saurabh12j.atlassian.net'
+                 //always 
+            {
+                 //    jiraSendBuildInfo site: 'saurabh12j.atlassian.net'
                  }}}
       stage('Deploy - Test') { // Compile and do unit testing
 
@@ -38,8 +39,9 @@ sh 'mvn -Dsonar.test.exclusions=**/test/java/servlet/createpage_junit.java -Dson
         sh 'mvn -B clean package'
       }
           post {
-                 always {
-                     jiraSendDeploymentInfo environmentId: '1', environmentName: 'Test', environmentType: 'testing', issueKeys: ['SQ-1'], serviceIds: [''], site: 'saurabh12j.atlassian.net', state: 'successful' 
+                 //always 
+              {
+                 //    jiraSendDeploymentInfo environmentId: '1', environmentName: 'Test', environmentType: 'testing', issueKeys: ['SQ-1'], serviceIds: [''], site: 'saurabh12j.atlassian.net', state: 'successful' 
                  }}}
 stage('UI Test') { // Compile and do unit testing
 
