@@ -27,22 +27,25 @@ sh 'mvn -Dsonar.test.exclusions=**/test/java/servlet/createpage_junit.java -Dson
         // run Gradle to execute compile and unit testing
         sh 'mvn -B -DskipTests clean compile'
       }
-        post {
+       // post {
                  //always 
-            {
+        //    {
                  //    jiraSendBuildInfo site: 'saurabh12j.atlassian.net'
-                 }}}
+             
+      //}}
+  }
       stage('Deploy - Test') { // Compile and do unit testing
 
       steps {
         // run Gradle to execute compile and unit testing
         sh 'mvn -B clean package'
       }
-          post {
+         // post {
                  //always 
-              {
+         //     {
                  //    jiraSendDeploymentInfo environmentId: '1', environmentName: 'Test', environmentType: 'testing', issueKeys: ['SQ-1'], serviceIds: [''], site: 'saurabh12j.atlassian.net', state: 'successful' 
-                 }}}
+               //  }}
+      }
 stage('UI Test') { // Compile and do unit testing
 
       steps {
